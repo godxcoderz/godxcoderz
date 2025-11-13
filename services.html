@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services | Godx Coderz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0e9e64a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/godx-coderz-logo.png" alt="Godx Coderz Logo" />
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+          <li><a href="our-creations.html">Our Creations</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="nav-cta">
+            <a href="login.html" class="btn-nav" id="authLink">Login</a>
+          </li>
+          <li><span class="user-chip" id="userChip" hidden></span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Services</h1>
+      <p>From concept to launch, we build products that are fast, secure, and easy to maintain.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid cards-3">
+        <article class="card" id="web">
+          <div class="icon"><i class="fa-solid fa-globe"></i></div>
+          <h3>Web Development</h3>
+          <ul class="list">
+            <li>Next.js/React, Vue, or SSG</li>
+            <li>SEO + accessibility baked in</li>
+            <li>APIs & integrations</li>
+          </ul>
+          <a href="about.html#contact" class="btn-primary small">Get a quote</a>
+        </article>
+
+        <article class="card" id="apps">
+          <div class="icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3>App Development</h3>
+          <ul class="list">
+            <li>iOS/Android with React Native or Flutter</li>
+            <li>Analytics & performance monitoring</li>
+            <li>Scalable backend (Firebase / Node)</li>
+          </ul>
+          <a href="about.html#contact" class="btn-primary small">Start a project</a>
+        </article>
+
+        <article class="card" id="design">
+          <div class="icon"><i class="fa-solid fa-palette"></i></div>
+          <h3>UI/UX & Branding</h3>
+          <ul class="list">
+            <li>Wireframes to hi‑fi design</li>
+            <li>Design systems & style guides</li>
+            <li>Brand identity & visuals</li>
+          </ul>
+          <a href="our-creations.html" class="btn-outline small">View samples</a>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <h3>E‑commerce</h3>
+          <ul class="list">
+            <li>Shopify, Woo, Headless</li>
+            <li>High-converting product pages</li>
+            <li>Payments & fulfillment</li>
+          </ul>
+          <a href="about.html#contact" class="btn-primary small">Let’s talk</a>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Automation</h3>
+          <ul class="list">
+            <li>Workflow automation with AI</li>
+            <li>Dashboards & reporting</li>
+            <li>Internal tools</li>
+          </ul>
+          <a href="about.html#contact" class="btn-primary small">Book a call</a>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Maintenance</h3>
+          <ul class="list">
+            <li>Security & monitoring</li>
+            <li>Speed optimization</li>
+            <li>Ongoing support</li>
+          </ul>
+          <a href="about.html#contact" class="btn-primary small">Keep it running</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; <span id="year"></span> Godx Coderz. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
