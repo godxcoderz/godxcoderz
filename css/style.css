@@ -281,3 +281,33 @@ footer{
   width: auto;
   display: block;
 }
+/* Add a wrapper for your work samples images */
+.worksamples {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center; /* optional: center on the page */
+}
+
+/* Minimum size for figures */
+.worksamples figure {
+  min-width: 200px;
+  max-width: 350px;
+  flex: 1 1 200px;
+  margin: 0;
+}
+
+/* Make images respect the max-width and be responsive */
+.worksamples img {
+  min-width: 200px;
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.worksamples figcaption {
+  margin-top: 8px;
+  text-align: center;
+}
