@@ -266,3 +266,13 @@ footer{
   right: 20px;
   height: 60px; /* adjust as needed */
 }
+.top-left-banner-img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 120px; /* or whatever suits your layout */
+  height: auto;
+  z-index: 2000;
+  border-radius: 12px; /* optional – for rounded corners */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08); /* optional */
+}
