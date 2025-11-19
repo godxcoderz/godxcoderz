@@ -311,9 +311,4 @@ footer{
   margin-top: 8px;
   text-align: center;
 }
-.eb-glow-1,
-.eb-glow-2,
-.eb-background-glow {
-  filter: blur(20px); /* increase for stronger aura */
-}
 
