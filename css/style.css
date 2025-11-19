@@ -311,4 +311,92 @@ footer{
   margin-top: 8px;
   text-align: center;
 }
+/* ========= ELECTRIC BORDER (drop-in) ========= */
+:root{
+  --eb-color: #dd8448;        /* main electric color */
+  --eb-accent: #ffb78f;       /* lighter accent */
+  --eb-thickness: 6px;        /* border line thickness (change as needed) */
+  --eb-size: 18px;            /* how far glow spreads out (increase for stronger glow) */
+  --eb-blur-1: 10px;          /* inner small blur */
+  --eb-blur-2: 28px;          /* outer strong blur */
+  --eb-z: 9999;
+}
+
+/* container covers full viewport and is pointer-events none so page works as usual */
+#electric-border{
+  position: fixed;
+  inset: 0;
+  pointer-events: none; /* ensures normal page interaction */
+  z-index: var(--eb-z);
+  mix-blend-mode: screen;
+}
+
+/* common layer styles */
+.eb-layer{
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 8px; /* page corners look better if rounded; change to 0 if you want sharp corners */
+  box-sizing: border-box;
+}
+
+/* main stroke — the thin neon line hugging the viewport edges */
+.eb-stroke{
+  border: var(--eb-thickness) solid rgba(0,0,0,0);
+  /* create a gradient border using outline+mask technique for cross-browser */
+  box-shadow:
+    0 0 0 calc(var(--eb-thickness) * -1) transparent; /* placeholder */
+  background:
+    linear-gradient(90deg, transparent, rgba(255,255,255,0.02)) border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: var(--eb-thickness);
+  border-radius: inherit;
+  /* use CSS border-image trick to color the inner edge */
+  border-image: linear-gradient(90deg, var(--eb-color), var(--eb-accent)) 1 round;
+  filter: url(#eb-turbulent); /* apply SVG filter for jitter */
+  opacity: 0.95;
+}
+
+/* soft glows */
+.eb-glow-1{
+  box-shadow:
+    0 0 var(--eb-blur-1) rgba(221,132,72,0.9),
+    0 0 calc(var(--eb-blur-1) * 2) rgba(221,132,72,0.25) inset;
+  border-radius: inherit;
+  mix-blend-mode: screen;
+  opacity: 0.95;
+}
+
+.eb-glow-2{
+  filter: blur(var(--eb-blur-2));
+  background: radial-gradient(closest-side, rgba(221,132,72,0.2), rgba(221,132,72,0) 40%);
+  transform: scale(1.03);
+  opacity: 0.6;
+  border-radius: inherit;
+}
+
+/* faint backdrop for outer aura */
+.eb-backdrop{
+  background: radial-gradient(ellipse at center, rgba(221,132,72,0.06), rgba(0,0,0,0) 45%);
+  opacity: 0.7;
+  border-radius: inherit;
+  transform: scale(1.05);
+}
+
+/* small responsive tweaks */
+@media (max-width: 700px){
+  :root{
+    --eb-thickness: 4px;
+    --eb-blur-2: 18px;
+    --eb-size: 12px;
+  }
+}
+
+/* optional: reduce motion preference */
+@media (prefers-reduced-motion: reduce){
+  .eb-stroke * , .eb-glow-1, .eb-glow-2 { animation: none !important; transition: none !important; filter: none !important; }
+}
+
 
