@@ -205,31 +205,4 @@
     </defs>
   </svg>
 
-  <!-- ELECTRIC BORDER: paste this immediately after <body> -->
-<div id="electric-border" aria-hidden="true">
-  <!-- SVG filter defs -->
-  <svg class="eb-svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
-    <defs>
-      <filter id="eb-turbulent" colorInterpolationFilters="sRGB" x="-200%" y="-200%" width="500%" height="500%">
-        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="8" result="noise1" seed="1" />
-        <feOffset in="noise1" dx="0" dy="0" result="offsetNoise1">
-          <animate attributeName="dy" values="700;0" dur="6s" repeatCount="indefinite" calcMode="linear" />
-        </feOffset>
 
-        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="8" result="noise2" seed="2" />
-        <feOffset in="noise2" dx="0" dy="0" result="offsetNoise2">
-          <animate attributeName="dy" values="0;-700" dur="6s" repeatCount="indefinite" calcMode="linear" />
-        </feOffset>
-
-        <feComposite in="offsetNoise1" in2="offsetNoise2" result="combinedNoise" />
-        <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="30" xChannelSelector="R" yChannelSelector="B" />
-      </filter>
-    </defs>
-  </svg>
-  <!-- stroke and glows -->
-  <div class="eb-layer eb-stroke"></div>
-  <div class="eb-layer eb-glow-1"></div>
-  <div class="eb-layer eb-glow-2"></div>
-  <div class="eb-layer eb-backdrop"></div>
-</div>
-<!-- /ELECTRIC BORDER -->
