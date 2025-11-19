@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Creations | Godx Coderz</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/a2e0e9e64a.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/godx-coderz-logo.png" alt="Godx Coderz Logo">
+      </a>
+
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="our-creations.html" class="active" aria-current="page">Our Creations</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="nav-cta">
+            <a href="login.html" class="btn-nav" id="authLink">Login</a>
+          </li>
+          <li><span class="user-chip" id="userChip" hidden></span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Our Creations</h1>
+      <p>A peek at projects we've shipped and the digital experiences we build for clients.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid gallery">
+        <figure class="shot">
+          <img src="images/creation1.jpg" alt="Project 1 screenshot" loading="lazy">
+          <figcaption>Fintech Dashboard • React + Node</figcaption>
+        </figure>
+
+        <figure class="shot">
+          <img src="images/creation2.jpg" alt="Project 2 screenshot" loading="lazy">
+          <figcaption>Ecommerce UI • Headless Shopify</figcaption>
+        </figure>
+
+        <figure class="shot">
+          <img src="images/creation3.jpg" alt="Project 3 screenshot" loading="lazy">
+          <figcaption>Mobile App • Flutter</figcaption>
+        </figure>
+
+        <figure class="shot">
+          <img src="images/creation4.jpg" alt="Project 4 screenshot" loading="lazy">
+          <figcaption>Landing Page • Next.js</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Reviews & Requests</h2>
+      <p class="section-lead">Share your feedback or tell us what you need. We listen.</p>
+
+      <div class="grid two">
+        <form id="review-form" class="card form-card" autocomplete="on" novalidate>
+          <div class="form-row">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" placeholder="Jane Doe" required>
+          </div>
+
+          <div class="form-row">
+            <label for="need">What service do you need?</label>
+            <input id="need" name="need" type="text" placeholder="React website, mobile app..." required>
+          </div>
+
+          <div class="form-row">
+            <label for="rating">Rating</label>
+            <select id="rating" name="rating" required>
+              <option value="">Select</option>
+              <option>5</option>
+              <option>4</option>
+              <option>3</option>
+              <option>2</option>
+              <option>1</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message / Review</label>
+            <textarea id="message" name="message" rows="4" placeholder="Share details or feedback..." required></textarea>
+          </div>
+
+          <button class="btn-primary" type="submit">Post</button>
+          <p class="form-note">Note: On GitHub Pages this stores locally.</p>
+        </form>
+
+        <div class="card reviews-list">
+          <ul id="reviews"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img id="lightboxImg" alt="">
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; <span id="year"></span> Godx Coderz. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+  
+</body>
+</html>
+
+...
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; <span id="year"></span> Godx Coderz. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox goes here -->
+  <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">&times;</button>
+      <img id="lightboxImg" alt="">
+      <p id="lightboxCaption"></p>
+  </div>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
