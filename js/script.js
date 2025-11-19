@@ -184,5 +184,34 @@ if (lightbox) {
 }
 
 import { useEffect, useId, useLayoutEffect, useRef } from 'react';
+/* electric-border.js — small helper to size the SVG filter animation */
+(function() {
+  try {
+    const svg = document.querySelector('.eb-svg-defs');
+    if (!svg) return;
+
+    function update() {
+      const width = Math.max(1, Math.round(window.innerWidth));
+      const height = Math.max(1, Math.round(window.innerHeight));
+
+      // find the animate elements and update values
+      const dyAnims = svg.querySelectorAll('feOffset > animate[attributeName="dy"]');
+      if (dyAnims && dyAnims.length >= 2) {
+        dyAnims[0].setAttribute('values', `${height};0`);
+        dyAnims[1].setAttribute('values', `0;-${height}`);
+      }
+      const disp = svg.querySelector('feDisplacementMap');
+      if (disp) disp.setAttribute('scale', String(Math.max(14, Math.round(Math.min(width, height) * 0.04))));
+    }
+
+    window.addEventListener('resize', update, { passive: true });
+    window.addEventListener('orientationchange', update, { passive: true });
+    // run initially
+    update();
+  } catch (e) {
+    console.warn('Electric border init failed', e);
+  }
+})();
+
 
 
